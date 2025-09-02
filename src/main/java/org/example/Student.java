@@ -1,17 +1,26 @@
 package org.example;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Student {
     private String firstName;
     private String surname;
     private int studentId;
+    private List<Kurs> kurs;
 
     public Student(String firstName, String surname, int studentId) {
         this.firstName = firstName;
         this.surname = surname;
         this.studentId = studentId;
+        this.kurs = new ArrayList<>();
     }
+
+    public void addKurs(Kurs kurs) {
+        this.kurs.add(kurs);
+    }
+
 
     public String getFirstName() {
         return firstName;
@@ -23,6 +32,10 @@ public class Student {
 
     public int getStudentId() {
         return studentId;
+    }
+
+    public List<Kurs> getKurs() {
+        return kurs;
     }
 
     @Override
