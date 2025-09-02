@@ -1,39 +1,34 @@
 package org.example;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Schule {
-    private List<Student> students;
+    private Map<Integer,Student> students;
     private String name;
 
     //Konstruktor
     public Schule(){
-        this.students = new ArrayList<>();
+        this.students = new HashMap<>();
     }
 
-    public Schule(List<Student> students) {
+    public Schule(Map<Integer,Student> students) {
         this.students = students;
     }
 
 
     public void addStudent(Student student) {
-        students.add(student);
+        students.put(student.getStudentId(), student);
     }
 
     //Methoden
     public void getAllStudents() {
-        students.forEach(System.out::println);
+        for(Map.Entry<Integer,Student> entry : students.entrySet()){
+            System.out.println(entry.getValue());
+        }
     }
 
     public Student getStudentById(int studentId) {
-        for (Student student : students) {
-            if (student.getStudentId() == studentId) {
-                return student;
-            }
-        }
-        return null;
+        return students.get(studentId);
     }
 
     public void removeStudentById(int studentId) {
@@ -52,7 +47,7 @@ public class Schule {
     }
 
     //Getter
-    public List<Student> getStudents() {
+    public Map<Integer, Student> getStudents() {
         return students;
     }
 

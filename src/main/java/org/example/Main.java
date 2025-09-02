@@ -1,7 +1,9 @@
 package org.example;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -12,7 +14,12 @@ public class Main {
         students.add(new Student("Jane", "Doe", 2));
         students.add(new Student("John", "Smith", 3));
 
-        Schule schule = new Schule(students);
+        Map<Integer, Student> studentMap= new HashMap<>();
+        for(Student student : students){
+            studentMap.put(student.getStudentId(), student);
+        }
+
+        Schule schule = new Schule(studentMap);
         schule.getAllStudents();
         schule.removeStudentById(1);
         schule.getAllStudents();
