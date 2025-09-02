@@ -44,6 +44,7 @@ public class Student {
                 "firstName='" + firstName + '\'' +
                 ", surname='" + surname + '\'' +
                 ", studentId=" + studentId +
+                ", kurs=" + kurs +
                 '}';
     }
 

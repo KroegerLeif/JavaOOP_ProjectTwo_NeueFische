@@ -19,5 +19,7 @@ public class Main {
         schule.addStudent(new Student("Jane", "Smith", 4));
         schule.getAllStudents();
 
+        students.get(1).addKurs(new Kurs("Informatik", "Floooorian", "A101"));
+        System.out.println(students.get(1));
     }
 }
