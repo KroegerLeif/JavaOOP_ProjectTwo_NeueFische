@@ -45,6 +45,12 @@ public class Schule {
         }
     }
 
+    public List<Kurs> getAllKurs(int studentId) {
+        List<Kurs> kursList = new ArrayList<>();
+        kursList = getStudentById(studentId).getKurs();
+        return kursList;
+    }
+
     //Getter
     public List<Student> getStudents() {
         return students;
