@@ -1,5 +1,8 @@
 package org.example.zoo;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class ZooMain {
     public static void main(String[] args) {
         Species bird = new Species("Bird", 10);
@@ -13,5 +16,13 @@ public class ZooMain {
 
         System.out.println(animal1);
         System.out.println(animal1.equals(animal2));
+
+        List<Animal> animals = new ArrayList<>();
+        animals.add(animal1);
+        animals.add(animal2);
+        animals.add(animal3);
+        animals.add(animal4);
+        Zoo zoo = new Zoo(animals);
+        System.out.println(zoo.calculateFeedPerDayInGramm());
     }
 }
