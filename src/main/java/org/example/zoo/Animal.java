@@ -3,5 +3,6 @@ package org.example.zoo;
 public record Animal(int id,
                      String name,
                      String species,
-                     int age){
+                     int age,
+                     Owner owner){
 }
